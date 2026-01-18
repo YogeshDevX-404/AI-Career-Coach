@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent,  CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import useFetch from '@/hooks/use-featch';
+import useFetch from '@/hooks/use-fetch';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { format, parse } from 'date-fns';
 import { Loader2, PlusCircle, Sparkles, X } from 'lucide-react';

@@ -6,8 +6,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
 
-
-  
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,35 +15,31 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider 
-    appearance={{ 
-      baseTheme: dark 
-      }}>
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className} `} >
-     
-        <ThemeProvider
+      <body className={inter.className}>
+        <ClerkProvider appearance={{ baseTheme: dark }}>
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
-
-            {/* <header /> */}
             <Header />
-              <main className="min-h-screen">{children}</main>
-              <Toaster richColors/>
-              
-            {/* <footer /> */}
+
+            <main className="min-h-screen">
+              {children}
+            </main>
+
+            <Toaster richColors />
+
             <footer className="bg-muted/50 py-12">
               <div className="container mx-auto px-4 text-center text-gray-200">
                 <p>Made with ❤️ by Intellirise</p>
               </div>
             </footer>
           </ThemeProvider>
+        </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
