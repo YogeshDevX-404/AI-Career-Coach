@@ -28,7 +28,7 @@ export default async function Header() {
         <Link href="/">
           <Image
             src={"/InteliRise-logo-with-upword-arrow.png"}
-            alt="InteliRise"
+            alt="logo"
             width={200}
             height={60}
             className="h-12 py-1 w-auto object-contain"
@@ -109,4 +109,5 @@ export default async function Header() {
     </header>
   );
 }
+
 
